@@ -1,0 +1,8 @@
+run:
+  dir: .
+output_subdir: null
+
+defaults:
+  - override job_logging: none
+  - override hydra_logging: none
+  - _self_

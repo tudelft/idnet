@@ -1,0 +1,8 @@
+defaults:
+  - dsec
+
+train:
+  vertical_flip: 0.1
+  horizontal_flip: 0.5
+  random_crop: [288, 384]
+

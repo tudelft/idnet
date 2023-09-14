@@ -1,0 +1,4 @@
+logger:
+  saved_tensors:
+
+  statistics: ['avg']

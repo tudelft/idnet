@@ -1,0 +1,17 @@
+eval_only: True
+callbacks:
+
+defaults:
+  - validation@_group_.co: co
+  - hydra: custom_hydra
+  - data_loader_base
+  - torch_environ_base
+  - model: idedeqid
+  - dataset: dsec_rec
+  - _self_
+
+model:
+  name: RecIDE
+  update_iters: 1
+  pred_next_flow: true
+  pretrain_ckpt: idn/checkpoint/tid.pt

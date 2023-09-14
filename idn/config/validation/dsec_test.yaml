@@ -1,0 +1,29 @@
+name: dsec-test
+data_loader:
+  gpu: 0
+  mp: false
+  batch_freq: 1500
+  args:
+    batch_size: 1
+    shuffle: false
+    num_workers: 1
+    pin_memory: true
+    prefetch_factor: 2
+
+
+logger:
+  save_dir: /tmp/collect/XX
+  saved_tensors:
+
+postprocess:
+
+metrics:
+    
+hydra:
+  output_subdir: null
+
+defaults:
+  - /dataset/dsec@dataset
+  - /logger_base@_here_
+  - _self_
+  

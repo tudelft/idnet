@@ -1,0 +1,10 @@
+data_loader:
+  gpu: ???
+  mp: false
+  batch_freq: 1500
+  args:
+    batch_size: 1
+    shuffle: false
+    num_workers: 1
+    pin_memory: true
+    prefetch_factor: 2

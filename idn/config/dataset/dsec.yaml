@@ -1,0 +1,14 @@
+defaults:
+  - dsec_base
+
+num_voxel_bins: 15
+
+train:
+  use_all_seqs: true
+  seq: []
+  load_gt: true
+  downsample_ratio: 1
+val:
+  seq: [zurich_city_01_a]
+  downsample_ratio: 1
+  concat_seq: false

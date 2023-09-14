@@ -1,0 +1,6 @@
+defaults:
+  - idedeqid
+
+hidden_dim: 128
+downsample: 4
+pretrain_ckpt: idn/checkpoint/id-4x.pt

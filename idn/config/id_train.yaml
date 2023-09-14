@@ -1,0 +1,62 @@
+deterministic: false
+track: false
+num_epoch: 100
+data_loader:
+  common:
+    num_voxel_bins: 15
+  train:
+    gpu: 0
+    args:
+      batch_size: 3
+  val:
+    gpu: 0
+    batch_freq: 1500
+loss:
+  final_prediction_nonseq:
+    loss_type: sparse_l1
+    weight: 1.0
+    seq_weight: avg
+    seq_norm: false
+
+
+dataset:
+  representation_type: voxel
+
+
+optim:
+  optimizer: adam
+  scheduler: onecycle
+  lr: 1e-4
+
+callbacks:
+  logger:
+    enable:
+    log_keys:
+      batch_end:
+        - loss
+        - lr
+
+
+  validator:
+    enable:
+    frequency_type: step
+    frequency: 500
+    sanity_run_step: 3
+
+
+validation:
+  nonrec:
+    dataset:
+      representation_type: ${dataset.representation_type}
+
+model:
+  pretrain_ckpt: null
+
+defaults:
+  - validation@_group_.nonrec: nonrec
+  - hydra: custom_hydra
+  - data_loader_base
+  - torch_environ_base
+  - model: id-8x # id-4x
+  - dataset: dsec_augmentation
+  - _self_

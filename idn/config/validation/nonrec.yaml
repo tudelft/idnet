@@ -1,0 +1,24 @@
+name: non-rec
+val_batch_freq: 1500
+data_loader:
+  gpu: 0
+
+
+logger:
+  saved_tensors:
+    final_prediction:
+    flow_gt_event_volume_new:
+
+postprocess:
+
+metrics:
+  final_prediction_nonseq: ["L1", "L2"]
+    
+hydra:
+  output_subdir: null
+
+defaults:
+  - /validation/data_loader_val_base@_here_
+  - /dataset/dsec@dataset
+  - /logger_base@_here_
+  

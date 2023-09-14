@@ -1,0 +1,3 @@
+torch:
+  debug_grad: false
+  deterministic: false

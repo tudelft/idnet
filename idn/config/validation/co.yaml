@@ -1,0 +1,24 @@
+name: continuous-operation
+val_batch_freq: 1500
+data_loader:
+  gpu: 0
+
+dataset:
+  val:
+    sequence_length: 1
+
+logger:
+  saved_tensors:
+    final_prediction:
+    flow_gt_event_volume_new:
+
+metrics:
+  final_prediction: ["L1", "L2"]
+  next_flow: ["L1", "L2"]
+
+postprocess:
+    
+defaults:
+  - /validation/data_loader_val_base@_here_
+  - /dataset/dsec_rec@dataset
+  - /logger_base@_here_

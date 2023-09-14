@@ -1,0 +1,30 @@
+name: IDNet
+channels:
+  - pytorch
+  - nvidia
+dependencies:
+  - python=3.8
+  - pytorch=1.13.1
+  - pytorch-cuda=11.7
+  - torchvision
+  - scikit-image
+  - numba
+  - pandas
+  - termcolor
+  - h5py
+  - tqdm
+  - matplotlib
+  - imageio
+  - ipykernel
+  - pip
+  - pip:
+    - torchinfo
+    - hydra-core
+    - wandb
+    - gitignore-parser
+    - opencv-python-headless
+    - hdf5plugin
+    - nbformat
+    - nbstripout
+    - rerun-sdk
+

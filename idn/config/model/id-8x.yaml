@@ -1,0 +1,6 @@
+defaults:
+  - idedeqid
+
+hidden_dim: 96
+downsample: 8
+pretrain_ckpt: idn/checkpoint/id-8x.pt

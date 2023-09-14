@@ -1,0 +1,7 @@
+name: IDEDEQIDO
+deblur: true
+add_delta: true
+update_iters: 4
+zero_init: true
+deq_mode: false
+input_flowmap: true

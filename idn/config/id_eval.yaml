@@ -1,0 +1,11 @@
+eval_only: True
+callbacks:
+
+defaults:
+  - hydra: custom_hydra
+  - data_loader_base
+  - model: id-8x # id-4x
+  - dataset: dsec
+  - torch_environ_base
+  - _self_
+

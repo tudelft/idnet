@@ -1,0 +1,4 @@
+dataset_name: dsec
+common:
+  data_root: data/
+  test_root: data/test/

@@ -1,0 +1,66 @@
+deterministic: false
+num_epoch: 100
+run_val: false
+data_loader:
+  common:
+    num_voxel_bins: 15
+  train:
+    gpu: 0
+    args:
+      batch_size: 3
+  val:
+    gpu: 0
+    batch_freq: 1500
+loss:
+  pred_flow_seq:
+    loss_type: sparse_l1
+    weight: 1.0
+    seq_weight: [0.17, 0.21, 0.27, 0.35]
+    seq_norm: false
+  pred_flow_next_seq:
+    loss_type: sparse_l1
+    weight: 1.0
+    seq_weight: [0.17, 0.21, 0.27, 0.35]
+    seq_norm: false
+
+dataset:
+  train:
+    sequence_length: 4
+
+optim:
+  optimizer: adam
+  scheduler: onecycle
+  lr: 1e-4
+
+callbacks:
+  logger:
+    enable:
+    log_keys:
+      batch_end:
+        - loss
+        - loss_pred_flow_seq
+        - loss_pred_flow_next_seq
+
+
+  validator:
+    enable:
+    frequency_type: step
+    frequency: 1000
+    sanity_run_step: 3
+
+
+
+
+defaults:
+  - validation@_group_.co: co
+  - hydra: custom_hydra
+  - data_loader_base
+  - torch_environ_base
+  - model: idedeqid
+  - dataset: dsec_rec
+  - _self_
+
+model:
+  name: RecIDE
+  update_iters: 1
+  pred_next_flow: true

@@ -1,0 +1,14 @@
+defaults:
+  - dsec
+
+train:
+  recurrent: true
+  sequence_length: 4
+  vertical_flip: 0.1
+  horizontal_flip: 0.5
+  random_crop: [384, 512]
+
+val:
+  recurrent: true
+  sequence_length: 4
+  concat_seq: false

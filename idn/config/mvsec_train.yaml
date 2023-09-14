@@ -1,0 +1,59 @@
+deterministic: false
+track: false
+num_epoch: 150
+run_val: false
+
+data_loader:
+  common:
+    num_voxel_bins: 15
+  train:
+    gpu: 0
+    args:
+      batch_size: 3
+      pin_memory: false
+  val:
+    gpu: 0
+    batch_freq: 1500
+loss:
+  final_prediction_nonseq:
+    loss_type: sparse_l1
+    weight: 1.0
+    seq_weight: avg
+    seq_norm: false
+
+dataset:
+  dataset_name: mvsec
+  num_voxel_bins: 15
+  train:
+
+
+optim:
+  optimizer: adam
+  scheduler: onecycle
+  lr: 1e-4
+
+callbacks:
+  logger:
+    enable:
+    log_keys:
+      batch_end:
+        - loss
+
+
+  validator:
+    enable:
+    frequency_type: step
+    frequency: 500
+    sanity_run_step: 3
+
+
+model:
+  pretrain_ckpt: null
+
+defaults:
+  - validation@_group_.mvsec_day1: mvsec_day1
+  - hydra: custom_hydra
+  - data_loader_base
+  - torch_environ_base
+  - model: id-8x
+  - _self_

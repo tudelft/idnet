@@ -1,0 +1,9 @@
+dataset:
+  val:
+    sequence_length: 1
+    recurrent: true
+
+defaults:
+  - dsec_test
+  - _self_
+  
