@@ -1,6 +1,20 @@
 # Lightweight Event-based Optical Flow Estimation via Iterative Deblurring
 
-This is the code for the ICRA 2024 submission #2581
+Work accepted to 2024 IEEE International Conference on Robotics and Automation (ICRA'24) [[paper](https://arxiv.org/abs/2211.13726), [video](https://www.youtube.com/watch?v=1qA1hONS4Sw)].
+
+If you use this code in an academic context, please cite our work:
+
+```bibtex
+@InProceedings{Wu_2024_ICRA,
+    author    = {Wu, Yilun and Paredes-Vall\'es, Federico and de Croon, Guido C. H. E.},
+    title     = {Lightweight Event-based Optical Flow Estimation via Iterative Deblurring},
+    booktitle = {Proceedings of IEEE International Conference on Robotics and Automation (ICRA'24)},
+    month     = {May},
+    year      = {2024},
+    Note      = {To Appear}
+}
+
+```
 
 ## Dependency
 Create a conda env and install dependencies by running
