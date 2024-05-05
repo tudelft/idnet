@@ -2,6 +2,9 @@
 
 Work accepted to 2024 IEEE International Conference on Robotics and Automation (ICRA'24) [[paper](https://arxiv.org/abs/2211.13726), [video](https://www.youtube.com/watch?v=1qA1hONS4Sw)].
 
+<img width="959" alt="idnet-graphical-abstract" src="https://github.com/tudelft/idnet/assets/10345786/6bfba2f6-d245-4be6-82c5-0757b2ae5134">
+
+
 If you use this code in an academic context, please cite our work:
 
 ```bibtex
