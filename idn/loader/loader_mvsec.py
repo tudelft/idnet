@@ -1,14 +1,14 @@
-import h5pickle as h5py
-# import h5py
+# import h5pickle as h5py
+import h5py
 import os
 import torch
 import random
 import numpy as np
 from torch.utils.data import Dataset
 from torchvision import transforms as T
-from id2.loader.utils import EventSequence
-from id2.utils.dsec_utils import RepresentationType, VoxelGrid
-from id2.utils.transformers import EventSequenceToVoxelGrid_Pytorch, apply_randomcrop_to_sample
+from idn.utils.mvsec_utils import EventSequence
+from idn.utils.dsec_utils import RepresentationType, VoxelGrid
+from idn.utils.transformers import EventSequenceToVoxelGrid_Pytorch, apply_randomcrop_to_sample
 
 class MVSEC(Dataset):
     def __init__(self, seq_name, seq_path="data/", representation_type=None, \
